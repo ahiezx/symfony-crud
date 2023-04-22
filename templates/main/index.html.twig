@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home page CRUD{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <h2>CRUD Table Example</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            
+                <tr>
+
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
